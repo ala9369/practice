@@ -33,7 +33,7 @@ pipeline {
                 script {
                     sshagent(['docker_swarm']) {
                      sh 'ssh -o StrictHostKeyChecking=no ec2-user@3.110.107.43 docker service rm javawebapp || true'
-                     sh "ssh -o StrictHostKeyChecking=no ec2-user@3.110.107.43 docker service create --name javawebapp -p 8080:8080 --replicas 2 govardhanr992/dockerswarm:${BUILD_NUMBER}"
+                     sh "ssh -o StrictHostKeyChecking=no ec2-user@3.110.107.43 docker service create --name javawebapp -p 8085:8085 --replicas 2 govardhanr992/dockerswarm:${BUILD_NUMBER}"
                   }
                 }
             }

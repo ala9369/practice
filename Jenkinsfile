@@ -38,7 +38,7 @@ pipeline {
                  sshagent(['deploy_application']) {
                  sh 'ssh -o StrictHostKeyChecking=no ec2-user@3.110.107.43 docker pull ala9369/practice:${BUILD_NUMBER} '
                  sh 'ssh -o StrictHostKeyChecking=no ec2-user@3.110.107.43 docker rm -f webserver || true'
-                 sh 'ssh -o StrictHostKeyChecking=no ec2-user@3.110.107.43 docker run -d -p 8080:8080 --name webserver ala9369/practice:${BUILD_NUMBER}'               
+                 sh 'ssh -o StrictHostKeyChecking=no ec2-user@3.110.107.43 docker run -d -p 8085:8085 --name webserver ala9369/practice:${BUILD_NUMBER}'               
             }
                 
               }
