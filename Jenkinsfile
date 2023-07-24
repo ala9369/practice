@@ -46,7 +46,7 @@ pipeline {
             }
             post{
                     success{
-                        emailext body: 'pipeline success', subject: 'success', to: 'rql1kor@bosch.com'
+                       emailext body: 'success', recipientProviders: [builduser()], subject: 'report', to: 'rql1kor@bosch.com
                     }
                 }
  }
