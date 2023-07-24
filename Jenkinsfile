@@ -44,4 +44,9 @@ pipeline {
               }
                 }
             }
+            post{
+                    success{
+                        emailext body: 'pipeline success', subject: 'success', to: 'rql1kor@bosch.com'
+                    }
+                }
  }
